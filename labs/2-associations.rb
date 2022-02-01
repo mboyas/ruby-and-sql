@@ -12,6 +12,10 @@
 # Elon Musk - elon@tesla.com - Tesla, Inc.
 # Tim Cook - tim@apple.com - Apple Inc.
 
+for contact in Contact.all
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.email} - #{contact.company.name}"
+end
+
 # 2. similar to above, but this time organized by company, write code to display each company (name) and its contacts, e.g.:
 
 # ---------------------------------
@@ -24,3 +28,10 @@
 #
 # Tesla, Inc.
 # Elon Musk - elon@tesla.com
+
+for company in Company.all
+    puts company.name
+    for contact in company.contacts
+        puts "#{contact.first_name} #{contact.last_name} - #{contact.email}" 
+    end
+end
